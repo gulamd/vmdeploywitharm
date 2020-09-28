@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "adminUsername": {
+      "value": "vmdemo"
+    },
+    "adminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/550b0012-54f4-44e3-8c33-f8ab7c35fcfc/resourceGroups/test-rg/providers/Microsoft.KeyVault/vaults/testkey-vault01"
+        },
+        "secretName": "vmpassword1"
+      }
+    },
+    "dnsLabelPrefix": {
+      "value": "vmdemo"
+    }
+  }
+}
+
